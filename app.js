@@ -2,10 +2,15 @@
 const express = require("express");
 const app = express();
 const path = require("path");
+const engine = require("ejs-mate");
 
 //Setting view engine as ejs and setting Default path to views for ejs temp files
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
+//Setting up the views directory
+app.use(express.static(path.join(__dirname, "public")));
+// Setting up the engine which is imported as ejs mate to ejs
+app.engine("ejs", engine);
 
 //All Routes
 app.get("/", (req, res) => {
