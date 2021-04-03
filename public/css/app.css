@@ -1,0 +1,46 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+ul {
+  width: 100%;
+  list-style-type: none;
+  display: flex;
+  background: mintcream;
+  margin: 0;
+  padding: 0;
+}
+
+ul img {
+  width: 60%;
+}
+
+.hamnav {
+  width: 19%;
+  margin-left: auto;
+  margin-right: -1em;
+}
+
+li {
+  padding: 0.6em;
+  display: flex;
+  overflow: hidden;
+}
+
+li:nth-child(3),
+li:nth-child(4) {
+  display: none;
+}
+
+.search {
+  width: 100%;
+  margin-left: -0.7em;
+  padding-right: 0;
+}
+
+/* button {
+  width: 15%;
+  height: 2.3em;
+  margin-top: 0.5em;
+} */ ;
