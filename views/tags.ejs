@@ -1,5 +1,13 @@
 <%- include('partials/header') %> 
 
 <h1>All Tags Here</h1>
-
+<% for t in tagseeds {%>
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">t.name</h5>
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <a href="#" class="btn btn-primary">t.count</a>
+        </div>
+      </div>
+<% } %> 
 <%- include('partials/footer') %> 

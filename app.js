@@ -3,6 +3,21 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const engine = require("ejs-mate");
+const mongoose = require("mongoose");
+const tags = require("./models/tags");
+const tagseeds = require("./seeds/tagsSeeds");
+
+mongoose
+  .connect("mongodb://localhost:27017/test", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => {
+    console.log("Database Connection Estalished");
+  })
+  .catch((err) => {
+    console.log(err);
+  });
 
 //Setting view engine as ejs and setting Default path to views for ejs temp files
 app.set("view engine", "ejs");
@@ -25,8 +40,8 @@ app.get("/register", (req, res) => {
   res.render("register");
 });
 
-app.get("/tags", (req, res) => {
-  res.render("tags");
+app.get("/tags", async (req, res) => {
+  const alltags = await res.render("tags", { tagseeds });
 });
 
 app.get("/new_question", (req, res) => {
